@@ -4,6 +4,35 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+#newUserDialog label, #changeUserDetailsDialog label {
+
+	float: left;
+
+	display: block;
+
+	width: 150px;
+
+}
+
+
+
+#newUserDialog input, #changeUserDetailsDialog input {
+
+	width: 300px;
+
+}
+
+
+
+#newUserDialog input[type=button] {
+
+	margin-top: 20px;
+
+	margin-left: 100px;
+
+}
+
 #top {
   background: #aba
   width: 100%;

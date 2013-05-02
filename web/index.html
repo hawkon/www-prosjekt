@@ -1,12 +1,15 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
 <head>
-<script src="js/pub.js"></script>
-<link type="text/css" href="css/openpub.css" rel="stylesheet" />	
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<link type="text/css" href="css/openpub.css" rel="stylesheet" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="pub.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script type="text/javascript">
 $(document).ready (function() {
         $('#right').load ('login.html');
+	$('#newUserDialog').dialog({autoOpen:false, width: "500px", modal: true });
 });
 </script>
 
@@ -21,23 +24,15 @@ $(document).ready (function() {
 	<!-- Dialog for registering new users -->
 
 	<div id="newUserDialog" title="Registrer ny bruker">
-
 	<form onsubmit="return false;">
-
 	<label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
-
 	<label for="pwd">Passord</label><input type="password" name="pwd"/><br/>
-
 	<label for="pwd1">Bekreft passord</label><input type="password" name="pwd1"/><br/>
-
 	<label for="given">Fornavn</label><input type="text" name="given"/><br/>
-
 	<label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
-
 	<input type="button" value="Registrer ny bruker" onclick="javascript:newUser(this.form);"/>
 
 </form>
-
 </div>
 </body>
 </html>
