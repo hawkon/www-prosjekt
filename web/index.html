@@ -16,6 +16,27 @@ $(document).ready (function() {
 	<div id="left"></div>
  	<div id="right"></div>
  	<div id="center"></div>
-	
+
+	<!-- Dialog for registering new users -->
+
+	<div id="newUserDialog" title="Registrer ny bruker">
+
+	<form onsubmit="return false;">
+
+	<label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
+
+	<label for="pwd">Passord</label><input type="password" name="pwd"/><br/>
+
+	<label for="pwd1">Bekreft passord</label><input type="password" name="pwd1"/><br/>
+
+	<label for="given">Fornavn</label><input type="text" name="given"/><br/>
+
+	<label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
+
+	<input type="button" value="Registrer ny bruker" onclick="javascript:newUser(this.form);"/>
+
+</form>
+
+</div>
 </body>
 </html>
