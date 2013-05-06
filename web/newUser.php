@@ -1,6 +1,6 @@
 ﻿<?php
 require_once 'db.php';
-$sql = 'INSERT INTO users (uid, givenname, surename, pwd) VALUES (?, ?, ?, ?)';
+$sql = 'INSERT INTO `openpub`.`users`(uid, givenname, surename, pwd) VALUES (?, ?, ?, ?)';
 $sth = $db->prepare ($sql);
 $res = $sth->execute (array ($_POST['uname'], $_POST['givenname'], $_POST['surename'], md5($_POST['pwd'])));
 if ($res==1)
