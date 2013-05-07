@@ -109,7 +109,7 @@ function changeUserDetails (form) {
 	});
 }
 
-jQuery(document).ready(function() {
+$(function() {
 //initerer førstesiden
 jQuery('#center').load('openpub.html');
 
