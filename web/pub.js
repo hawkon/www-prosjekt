@@ -124,9 +124,9 @@ function logOut () {
 	$.ajax({
 		url: 'logout.php',
 		success: function (tmp) {
-			$('#left').load ('login.html');
+		//	$('#left').load ('login.html');
 		}
 	});
-	$('#right').load('right.html');
+	$('#right').load('login.html');
 	$('#content').load ('logout.html');
 };
