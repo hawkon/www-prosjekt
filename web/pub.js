@@ -108,8 +108,7 @@ jQuery('#center').load('openpub.html');
 
 
 //menu klikk
-jQuery('ul#nav li a').click(function()  {  "use strict"; 
-	var page = jQuery(this).attr('href');
-	jQuery('#center').load('content/' + page + '.php');
-	return false;
+$('ul#nav li a').click(function()  {  "use strict"; 
+	var page = $(this).attr('href');
+	$('.center').load('content/' + page + '.php');
 	});
