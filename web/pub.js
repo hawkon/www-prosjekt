@@ -75,7 +75,6 @@ function changeUserDetailsDialog () {
 
 }
 
-<<<<<<< HEAD
 function changeUserDetails (form) {
 	if (form.pwd.value.length>0&&form.opwd.value.length<6) {
 		alert ("Du må oppgi det gamle passordet for å sette nytt passord");
@@ -102,13 +101,10 @@ function changeUserDetails (form) {
 jQuery(document).ready(function() {
 //initerer førstesiden
 jQuery('#center').load('openpub.html');
-=======
->>>>>>> b0ffd850360a938abc0cffcc5e71fdfc5ce769c7
-
-
 
 //menu klikk
 $('ul#nav li a').click(function()  {  "use strict"; 
 	var page = $(this).attr('href');
 	$('#center').load(page);
 	});
+});
