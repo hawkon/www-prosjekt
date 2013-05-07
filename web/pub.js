@@ -83,5 +83,5 @@ function changeUserDetailsDialog () {
 //menu klikk
 $('ul#nav li a').click(function()  {  "use strict"; 
 	var page = $(this).attr('href');
-	$('.center').load('content/' + page + '.php');
+	$('#center').load(page);
 	});
