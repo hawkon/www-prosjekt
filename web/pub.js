@@ -1,4 +1,3 @@
-"use strict";
 function newUserDialog () {
         jQuery('#newUserDialog').dialog('open');
 }
