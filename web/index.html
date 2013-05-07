@@ -9,6 +9,7 @@
 <script type="text/javascript">
 $(document).ready (function() {
         jQuery('#right').load ('login.html');
+	jQuery('#center').load('openpub.html');
 	jQuery('#newUserDialog').dialog({autoOpen:false, width: "500px", modal: true });
 });
 </script>
@@ -34,9 +35,6 @@ $(document).ready (function() {
 
 </form>
 </div>
-
-
-</body>
 <!-- Dialog for changing user details -->
 
 <div id="changeUserDetailsDialog" title="Registrer ny bruker">
@@ -56,4 +54,8 @@ $(document).ready (function() {
 <input type="submit" name="action" value="Last opp nytt bilde" /><br />
 <iframe id="upload_target" name="upload_target" src="" style="width:0;height:0;border:0px solid #fff;"></iframe>
 </form>
-</div></html>
+</div>
+
+</body>
+
+</html>

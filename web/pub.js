@@ -1,4 +1,4 @@
-
+"use strict";
 function newUserDialog () {
         jQuery('#newUserDialog').dialog('open');
 }
@@ -78,16 +78,12 @@ function changeUserDetailsDialog () {
 
 }
 
-jQuery(document).ready(function() {
-//initerer førstesiden
-jQuery('#center').load('openpub.html');
 
 
 
 //menu klikk
-jQuery('ul#nav li a').click(function()  {
-	var page =jQuery(this).attr('href');
-	jQuery('#center').load('content/' + page + '.html');
+jQuery('ul#nav li a').click(function()  {  "use strict"; 
+	var page = jQuery(this).attr('href');
+	jQuery('#center').load('content/' + page + '.php');
 	return false;
 	});
-  });
