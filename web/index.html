@@ -11,7 +11,7 @@ $(document).ready (function() {
         jQuery('#right').load ('login.html');
 	jQuery('#center').load('openpub.html');
 	jQuery('#newUserDialog').dialog({autoOpen:false, width: "500px", modal: true });
-	jQuery('#changeUserDetailsDialog').dialog({autoOpen:false, width: "700px", modal: true });
+	jQuery('#changeUserDetailsDialog').dialog({autoOpen:false, width: "800px", modal: true });
 });
 </script>
 
@@ -40,15 +40,16 @@ $(document).ready (function() {
 
 <div id="changeUserDetailsDialog" title="Registrer ny bruker">
 <form onsubmit="return false;">
-<img src="Avatar-head.gif" style="float:right; margin-right: 20px;">
 <label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
 <label for="pwd">Gjeldende passord</label><input type="password" name="opwd" title="For å endre passord må du oppgi både nåværende og nytt passord"/><br/>
-<label for="pwd">Passord</label><input type="password" name="pwd" title="La være blankt for ikke å endre passord"/><br/>
+<label for="pwd">Nytt passord</label><input type="password" name="pwd" title="La være blankt for ikke å endre passord"/><br/>
 <label for="pwd1">Bekreft passord</label><input type="password" name="pwd1" title="La være blankt for ikke å endre passord"/><br/>
 <label for="given">Fornavn</label><input type="text" name="given"/><br/>
 <label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
-<label for="url">Hjemmeside</label><input type="url" name="url"/><br/>
 <input type="button" value="Oppdater brukerdata" onclick="javascript:changeUserDetails(this.form);"/>
+<<<<<<< HEAD
+</div></html>
+=======
 </form>
 <form id="" method="post" target="upload_target" enctype="multipart/form-data" action="uploadUserImage.php">
 <label for="file">Nytt bilde</label><input name="file" id="file" type="file" /><br />
@@ -60,3 +61,4 @@ $(document).ready (function() {
 </body>
 
 </html>
+>>>>>>> b0ffd850360a938abc0cffcc5e71fdfc5ce769c7
