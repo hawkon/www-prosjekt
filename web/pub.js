@@ -50,17 +50,7 @@ function loggInn(form) {
 				jQuery('#right').load ('loginok.php');
 				jQuery('#content').load ('editor');
 				jQuery('#left').load ('menu.html')
-		jQuery(document).ready(function() {
-//initerer førstesiden
-jQuery('#center').load('openpub.html');
 
-//menu klikk
-$('ul#nav li a').click(function()  {  "use strict";
-        var page = $(this).attr('href');
-        $('#center').load(page);
-        });
-});
-	
 				}
 	});
 };
@@ -116,7 +106,7 @@ jQuery('#center').load('openpub.html');
 //menu klikk
 $('ul#nav li a').click(function()  {  "use strict"; 
 	var page = $(this).attr('href');
-	$('#center').load(page);
+	$('#center').load('content/' +page+ '.php' );
 	});
 });
 
@@ -124,9 +114,9 @@ function logOut () {
 	$.ajax({
 		url: 'logout.php',
 		success: function (tmp) {
-		//	$('#left').load ('login.html');
+			$('#left').load ('logutleft.html');
 		}
 	});
 	$('#right').load('login.html');
-	$('#content').load ('logout.html');
+	$('#center').load ('logout.html');
 };
