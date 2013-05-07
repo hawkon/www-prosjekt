@@ -119,3 +119,14 @@ $('ul#nav li a').click(function()  {  "use strict";
 	$('#center').load(page);
 	});
 });
+
+function logOut () {
+	$.ajax({
+		url: 'logout.php',
+		success: function (tmp) {
+			$('#left').load ('login.html');
+		}
+	});
+	$('#right').load('right.html');
+	$('#content').load ('logout.html');
+};
