@@ -1,6 +1,6 @@
 
 function newUserDialog () {
-        $('#newUserDialog').dialog('open');
+        jQuery('#newUserDialog').dialog('open');
 }
 
 
@@ -15,7 +15,7 @@ function newUser (form) {
 		alert ("Passordet må være minst 6 karakterer langt");
 		form.pwd.focus();
 	}
-	$.ajax({
+	jQuery.ajax({
 		url: 'newUser.php',
 		type: 'post',
 		data: { uname: form.uname.value, pwd: form.pwd.value, givenname: form.given.value, 
@@ -23,7 +23,7 @@ function newUser (form) {
 		success: function (tmp) {
 			data = eval ('('+tmp+')');
 			if (data.ok=="OK") {
-				$.ajax({
+				jQuery.ajax({
 					url: 'login.php',
 					type: 'post',
 					data: {'uname': form.uname.value, 'pwd': form.pwd.value},
@@ -31,7 +31,7 @@ function newUser (form) {
 						$('#right').load ('loginok.php');
 					}
 				});
-				$('#newUserDialog').dialog('close');
+				jQery('#newUserDialog').dialog('close');
 			} else {
 				alert (data.message);
 			}
@@ -42,21 +42,21 @@ function newUser (form) {
 
 
 function loggInn(form) {
-	$.ajax({
+	jQuery.ajax({
 		url: 'login.php',
 		type: 'post',
 		data: {'uname': form.uname.value, 'pwd': form.pwd.value},
 		success: function (tmp) {
 			data = eval ('('+tmp+')');
-				$('#right').load ('loginok.php');
-				$('#content').load ('editor');
-				$('#left').load ('menu.html')
+				jQuery('#right').load ('loginok.php');
+				jQuery('#content').load ('editor');
+				jQuery('#left').load ('menu.html')
 			}
 	});
 };
 
 function changeUserDetailsDialog () {
-	$.ajax ({
+	jQuery.ajax ({
 		url: 'userDetails.php',
 		type: 'post',
 		success: function (tmp) {
@@ -65,29 +65,29 @@ function changeUserDetailsDialog () {
 				alert (data.error);
 				return;
 			}
-			var form = $('#changeUserDetailsDialog form').first()[0];
+			var form = jQuery('#changeUserDetailsDialog form').first()[0];
 			form.uname.value = data.uid;
 			form.uname.disabled = true;
 			form.given.value = data.givenname;
 			form.suren.value = data.surename;
 //			form.url.value = data.url;
 		//	$('#changeUserDetailsDialog img').first()[0].src = 'userImage.php';
-			$('#changeUserDetailsDialog').dialog('open');
+			jQuery('#changeUserDetailsDialog').dialog('open');
 		}
 	});
 
 }
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
 //initerer førstesiden
-$('#center').load('openpub.html');
+jQuery('#center').load('openpub.html');
 
-}
+
 
 //menu klikk
-$('ul#nav li a').click(function() {
-	var page =$(this).attr('href');
-	$('#center').load(+ page + '.html' );
+jQuery('ul#nav li a').click(function()  {
+	var page =jQuery(this).attr('href');
+	jQuery('#center').load('content/' + page + '.html');
 	return false;
 	});
   });
