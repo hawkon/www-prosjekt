@@ -1,4 +1,3 @@
-
 function newUserDialog () {
         jQuery('#newUserDialog').dialog('open');
 }
@@ -76,6 +75,7 @@ function changeUserDetailsDialog () {
 
 }
 
+<<<<<<< HEAD
 function changeUserDetails (form) {
 	if (form.pwd.value.length>0&&form.opwd.value.length<6) {
 		alert ("Du må oppgi det gamle passordet for å sette nytt passord");
@@ -102,13 +102,14 @@ function changeUserDetails (form) {
 jQuery(document).ready(function() {
 //initerer førstesiden
 jQuery('#center').load('openpub.html');
+=======
+>>>>>>> b0ffd850360a938abc0cffcc5e71fdfc5ce769c7
 
 
 
 //menu klikk
-jQuery('ul#nav li a').click(function()  {
-	var page =jQuery(this).attr('href');
-	jQuery('#center').load('content/' + page + '.html');
+jQuery('ul#nav li a').click(function()  {  "use strict"; 
+	var page = jQuery(this).attr('href');
+	jQuery('#center').load('content/' + page + '.php');
 	return false;
 	});
-  });
