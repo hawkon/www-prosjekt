@@ -50,7 +50,18 @@ function loggInn(form) {
 				jQuery('#right').load ('loginok.php');
 				jQuery('#content').load ('editor');
 				jQuery('#left').load ('menu.html')
-			}
+		jQuery(document).ready(function() {
+//initerer førstesiden
+jQuery('#center').load('openpub.html');
+
+//menu klikk
+$('ul#nav li a').click(function()  {  "use strict";
+        var page = $(this).attr('href');
+        $('#center').load(page);
+        });
+});
+	
+				}
 	});
 };
 
