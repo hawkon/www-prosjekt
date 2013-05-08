@@ -99,16 +99,6 @@ function changeUserDetails (form) {
 	});
 }
 
-//$(function() {
-//initerer førstesiden
-//jQuery('#center').load('openpub.html');
-
-//menu klikk
-//$('ul#nav li a').click(function()  {  
-//	var page = $(this).attr('href');
-//	$('#center').load('(' +page+ ')');
-//	});
-//});
 
 function logOut () {
 	$.ajax({
@@ -121,10 +111,8 @@ function logOut () {
 	$('#center').load ('logout.html');
 };
 
+// Funksjon for å slippe å reloade linker i menyen.
 function linkFunction(clicked) {
-	var url = $(clicked.href);
-
-	$('#center').load(+url+ '.php' )
-//	$('#center').load('('clicked ')''.php');
+	$('#center').load(clicked +'.php' )
 };
 
