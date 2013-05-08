@@ -99,16 +99,16 @@ function changeUserDetails (form) {
 	});
 }
 
-$(function() {
+//$(function() {
 //initerer førstesiden
-jQuery('#center').load('openpub.html');
+//jQuery('#center').load('openpub.html');
 
 //menu klikk
-$('ul#nav li a').click(function()  {  "use strict"; 
-	var page = $(this).attr('href');
-	$('#center').load('content/' +page+ '.php' );
-	});
-});
+//$('ul#nav li a').click(function()  {  
+//	var page = $(this).attr('href');
+//	$('#center').load('(' +page+ ')');
+//	});
+//});
 
 function logOut () {
 	$.ajax({
@@ -120,3 +120,11 @@ function logOut () {
 	$('#right').load('login.html');
 	$('#center').load ('logout.html');
 };
+
+function linkFunction(clicked) {
+	var url = $(clicked.href);
+
+	$('#center').load(+url+ '.php' )
+//	$('#center').load('('clicked ')''.php');
+};
+
