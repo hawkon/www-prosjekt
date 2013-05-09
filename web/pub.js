@@ -1,3 +1,15 @@
+$(document).ready (function () {
+  $.ajax({
+    url: 'isLoggedIn.php',
+    success: function (data) {
+      if (data.login=='OK') {
+        $('#right').load ('loginok.php');
+      } else
+        $('#right').load ('login.html');
+    }
+  });
+});
+
 function newUserDialog () {
         jQuery('#newUserDialog').dialog('open');
 }
@@ -116,15 +128,3 @@ function logOut () {
 function linkFunction(clicked) {
 	$('#center').load(clicked +'.html' )
 };
-
-$(document).ready (function () {
-  $.ajax({
-    url: 'isLoggedIn.php',
-    success: function (data) {
-      if (data.login=='OK') {
-        $('#right').load ('loginok.php');
-      } else
-        $('#right').load ('login.html');
-    }
-  });
-});
