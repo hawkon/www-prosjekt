@@ -28,9 +28,10 @@ function newUser (form) {
 					data: {'uname': form.uname.value, 'pwd': form.pwd.value},
 					success: function (tmp) {
 						$('#right').load ('loginok.php');
+						$('#left').load ('menu.html')
 					}
 				});
-				jQery('#newUserDialog').dialog('close');
+				jQuery('#newUserDialog').dialog('close');
 			} else {
 				alert (data.message);
 			}
@@ -113,6 +114,17 @@ function logOut () {
 
 // Funksjon for å slippe å reloade linker i menyen.
 function linkFunction(clicked) {
-	$('#center').load(clicked +'.php' )
+	$('#center').load(clicked +'.html' )
 };
 
+$(document).ready (function () {
+  $.ajax({
+    url: 'isLoggedIn.php',
+    success: function (data) {
+      if (data.login=='OK') {
+        $('#right').load ('loginok.php');
+      } else
+        $('#right').load ('login.html');
+    }
+  });
+});
