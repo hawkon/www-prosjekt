@@ -61,7 +61,7 @@ function loggInn(form) {
 		success: function (tmp) {
 			data = eval ('('+tmp+')');
 				jQuery('#right').load ('loginok.php');
-				jQuery('#content').load ('editor');
+				jQuery('#center').load ('mineBloggInnlegg.php');
 				jQuery('#left').load ('menu.html')
 
 				}
@@ -137,12 +137,11 @@ function linkFunction(clicked) {
 function newBlogEntry () {
 
 	$.ajax({
-
 		url: 'newBlogEntry.html',
 
 		success: function (data) {
 
-			$('#content').html (data);
+			$('#center').html (data);
 
 			$('#newBlogEntry').tinymce({
 
@@ -150,7 +149,7 @@ function newBlogEntry () {
 
 				// Location of TinyMCE script
 
-				script_url : '/tinymce/jscripts/tiny_mce/tiny_mce_gzip.php',
+				script_url : './tinymce/jscripts/tiny_mce/tiny_mce_gzip.php',
 	
 
 
@@ -196,7 +195,7 @@ function storeNewBlogEntry() {
 
 		url: 'storeNewBlogEntry.php',
 
-		data: {title: $('#content form input')[0].value, content: $('#newBlogEntry').html(), latitude: latitude, longitude: longitude },
+		data: {title: $('#center form input')[0].value, content: $('#newBlogEntry').html() },
 
 		type: 'post',
 
@@ -208,7 +207,7 @@ function storeNewBlogEntry() {
 
 				alert (data.message);
 
-				$('#content').load ('mineBloggInnlegg.php');
+				$('#center').load ('mineBloggInnlegg.php');
 
 			} else
 
@@ -220,34 +219,39 @@ function storeNewBlogEntry() {
 
 }
 
-function addElement() {
+function newPage () {
+        jQuery('#newPage').dialog('open');
+}
 
-  var ni = document.getElementById('myDiv');
 
-  var numi = document.getElementById('theValue');
+function showEntry (id, url) {
 
-  var num = (document.getElementById('theValue').value -1)+ 2;
+	$.ajax({
 
-  numi.value = num;
+		url: 'getEntry.php',
 
-  var newdiv = document.createElement('div');
+		data: { id: id, returnURL: url },
 
-  var divIdName = 'my'+num+'Div';
+		type: 'post',
 
-  newdiv.setAttribute('id',divIdName);
+		success: function (tmp) {
 
-  newdiv.innerHTML = 'Element Number '+num+' has been added! <a href=\'#\' onclick=\'removeElement('+divIdName+')\'>Remove the div "'+divIdName+'"</a>';
+			data = eval ('('+tmp+')');
 
-  ni.appendChild(newdiv);
+			if (data.ok) {
+
+				$('#center').html (data.html);
+			} else
+
+				alert (data.message);
+
+		}
+
+	});
 
 }
 
-function removeElement(divNum) {
+function back (url) {
 
-  var d = document.getElementById('myDiv');
-
-  var olddiv = document.getElementById(divNum);
-
-  d.removeChild(olddiv);
-
+	$('#center').load (url);
 }
