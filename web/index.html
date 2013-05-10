@@ -9,10 +9,10 @@
 <script src="pub.js"></script>
 <script type="text/javascript">
 $(document).ready (function() {
-        jQuery('#right').load ('login.html');
-	jQuery('#center').load('openpub.html');
-	jQuery('#newUserDialog').dialog({autoOpen:false, width: "500px", modal: true });
-	jQuery('#changeUserDetailsDialog').dialog({autoOpen:false, width: "800px", modal: true });
+	$('#right').load ('login.html');
+	$('#center').load('openpub.html');
+	$('#newUserDialog').dialog({autoOpen:false, width: "500px", modal: true });
+	$('#changeUserDetailsDialog').dialog({autoOpen:false, width: "800px", modal: true });
 });
 </script>
 
@@ -25,7 +25,6 @@ $(document).ready (function() {
  	<div id="center"></div>
 
 	<!-- Dialog for registering new users -->
-
 	<div id="newUserDialog" title="Registrer ny bruker">
 	<form onsubmit="return false;">
 	<label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
@@ -34,22 +33,20 @@ $(document).ready (function() {
 	<label for="given">Fornavn</label><input type="text" name="given"/><br/>
 	<label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
 	<input type="button" value="Registrer ny bruker" onclick="javascript:newUser(this.form);"/>
+	</form>
+	</div>
 
-</form>
-</div>
-<!-- Dialog for changing user details -->
-
-<div id="changeUserDetailsDialog" title="Registrer ny bruker">
-<form onsubmit="return false;">
-<label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
-<label for="pwd">Gjeldende passord</label><input type="password" name="opwd" title="For å endre passord må du oppgi både nåværende og nytt passord"/><br/>
-<label for="pwd">Nytt passord</label><input type="password" name="pwd" title="La være blankt for ikke å endre passord"/><br/>
-<label for="pwd1">Bekreft passord</label><input type="password" name="pwd1" title="La være blankt for ikke å endre passord"/><br/>
-<label for="given">Fornavn</label><input type="text" name="given"/><br/>
-<label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
-<input type="button" value="Oppdater brukerdata" onclick="javascript:changeUserDetails(this.form);"/>
-</form>
-</div>
-
-
+	<!-- Dialog for changing user details -->
+	<div id="changeUserDetailsDialog" title="Registrer ny bruker">
+	<form onsubmit="return false;">
+	<label for="uname">Brukernavn</label><input type="text" name="uname" title="Din e-post adresse"/><br/>
+	<label for="pwd">Gjeldende passord</label><input type="password" name="opwd" title="For å endre passord må du oppgi både nåværende og nytt passord"/><br/>
+	<label for="pwd">Nytt passord</label><input type="password" name="pwd" title="La være blankt for ikke å endre passord"/><br/>
+	<label for="pwd1">Bekreft passord</label><input type="password" name="pwd1" title="La være blankt for ikke å endre passord"/><br/>
+	<label for="given">Fornavn</label><input type="text" name="given"/><br/>
+	<label for="suren">Etternavn</label><input type="text" name="suren"/><br/>
+	<input type="button" value="Oppdater brukerdata" onclick="javascript:changeUserDetails(this.form);"/>
+	</form>
+	</div>
+</body>
 </html>
