@@ -178,6 +178,10 @@ function newPage () {
         jQuery('#newPage').dialog('open');
 }
 
+function hjem () 
+{
+	jQuery('#center').load ('mineSider.php');
+}
 
 function showSite (id, url) {
 	$.ajax({
