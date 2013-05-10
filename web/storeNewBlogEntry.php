@@ -10,29 +10,13 @@
 
 		die (json_encode (array ('message'=>'Du kan ikke lagre blog innlegg når du ikke er logget på')));
 
-	$sql = 'INSERT INTO entry (uid, title, entry, lat, lng, `when`) VALUES (?, ?, ?, ?, ?, now())';
-
-	if (isset($_POST['latitude']))
-
-		$lat = $_POST['latitude'];
-
-	else
-
-		$lat = null;
-
-	if (isset($_POST['longitude']))
-
-		$lng = $_POST['longitude'];
-
-	else
-
-		$lng = null;
+	$sql = 'INSERT INTO entry (uid, title, entry, `when`) VALUES (?, ?, ?, now())';
 
 	$sth = $db->prepare ($sql);
 
 //	print_r ($db->errorInfo());
 
-	$sth->execute (array ($_SESSION['user'], $_POST['title'], $_POST['content'], $lat, $lng));
+	$sth->execute (array ($_SESSION['user'], $_POST['title'], $_POST['content']));
 
 //	print_r ($db->errorInfo());
 

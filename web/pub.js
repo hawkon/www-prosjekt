@@ -255,3 +255,5 @@ function back (url) {
 
 	$('#center').load (url);
 }
+
+

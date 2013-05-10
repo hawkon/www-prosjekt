@@ -18,7 +18,7 @@ $sth = $db->prepare ($sql);
 
 $sth->execute (array ($_POST['id']));
 
-$sql = 'SELECT id, users.uid, entry.title, entry.entry, entry.lat, entry.lng, 
+$sql = 'SELECT id, users.uid, entry.title, entry.entry, 
 
                DATE_FORMAT(`when`, "%a %e/%c-%Y (%k:%i)") as `date`, 
 
@@ -34,9 +34,6 @@ $sth->execute (array ($_POST['id']));
 
 if ($row = $sth->fetch()) {
 
-	$data['lat'] = $row['lat'];
-
-	$data['lng'] = $row['lng'];
 
 	$data['name'] = $row['givenname'].' '.$row['surename'];
 

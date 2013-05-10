@@ -18,7 +18,7 @@ if (!isset($_SESSION['user']))
 
 require_once 'db.php';
 
-$sql = 'SELECT id, title, entry, lat, lng, DATE_FORMAT(`when`, "%a %e/%c-%Y (%k:%i)") as `date` FROM entry WHERE uid=? ORDER BY `when` DESC limit 20';
+$sql = 'SELECT id, title, entry,  DATE_FORMAT(`when`, "%a %e/%c-%Y (%k:%i)") as `date` FROM entry WHERE uid=? ORDER BY `when` DESC limit 20';
 
 $sth = $db->prepare ($sql);
 
